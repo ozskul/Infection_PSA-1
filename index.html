@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Minimal black landing page with a looping autoplay video."
+    />
+    <title>Black Video Landing</title>
+    <link rel="preload" href="assets/videos/replace-me.mp4" as="video" type="video/mp4" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="page" aria-label="Landing page">
+      <section class="video-shell" aria-label="Featured video">
+        <!--
+          REPLACE THE VIDEO HERE:
+          1) Put your video file inside /assets/videos/
+          2) Either rename your file to "replace-me.mp4"
+             OR update the src path below to your new filename
+          3) This project starts muted so autoplay works more reliably
+             4) Users can enable audio with the sound button or by tapping the video
+        -->
+        <video
+          id="hero-video"
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          webkit-playsinline="true"
+          preload="auto"
+          poster="assets/images/video-fallback.svg"
+          aria-label="Autoplaying landing page video"
+        >
+          <source src="assets/videos/replace-me.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+
+        <div id="fallback-message" class="fallback-message" hidden>
+          <p>The video could not be played in this browser.</p>
+          <p>
+            Add a supported MP4 file to
+            <code>/assets/videos/replace-me.mp4</code>
+            or update the path in <code>index.html</code>.
+          </p>
+        </div>
+
+        <button
+          id="sound-toggle"
+          class="sound-toggle"
+          type="button"
+          aria-controls="hero-video"
+          aria-pressed="false"
+        >
+          Enable sound
+        </button>
+      </section>
+    </main>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
